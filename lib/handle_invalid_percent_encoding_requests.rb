@@ -1,0 +1,2 @@
+require "handle_invalid_percent_encoding_requests/middleware"
+require "handle_invalid_percent_encoding_requests/engine"
