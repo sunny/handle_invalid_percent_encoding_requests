@@ -1,7 +1,7 @@
 module HandleInvalidPercentEncodingRequests
 
-  # From http://stackoverflow.com/a/24727310/311657
-  # and https://gist.github.com/bf4/d26259acfa29f3b9882b#file-exception_app-rb
+
+  # Via https://gist.github.com/bf4/d26259acfa29f3b9882b#file-exception_app-rb
   class Middleware
     DEFAULT_CONTENT_TYPE = 'text/html'
     DEFAULT_CHARSET      = 'utf-8'

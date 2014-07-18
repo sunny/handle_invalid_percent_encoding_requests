@@ -16,6 +16,7 @@ Gem::Specification.new do |s|
   s.test_files = Dir["test/**/*"]
 
   s.add_dependency "rails", "~> 4.1.4"
+  s.add_dependency "rack-utf8_sanitizer"
 
   # s.add_development_dependency "rspec-rails"
   # s.add_development_dependency "combustion"

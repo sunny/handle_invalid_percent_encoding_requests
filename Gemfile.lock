@@ -2,6 +2,7 @@ PATH
   remote: .
   specs:
     handle_invalid_percent_encoding_requests (0.1)
+      rack-utf8_sanitizer
       rails (~> 4.1.4)
 
 GEM
@@ -49,6 +50,8 @@ GEM
     rack (1.5.2)
     rack-test (0.6.2)
       rack (>= 1.0)
+    rack-utf8_sanitizer (1.2.1)
+      rack (~> 1.0)
     rails (4.1.4)
       actionmailer (= 4.1.4)
       actionpack (= 4.1.4)
