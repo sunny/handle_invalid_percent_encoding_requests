@@ -1,9 +1,9 @@
 PATH
   remote: .
   specs:
-    handle_invalid_percent_encoding_requests (1.0)
+    handle_invalid_percent_encoding_requests (1.0.1)
       rack-utf8_sanitizer
-      rails (~> 4.1.4)
+      rails (>= 3.1)
 
 GEM
   remote: https://rubygems.org/
