@@ -20,16 +20,14 @@ module HandleInvalidPercentEncodingRequests
     # Rescue from that specific ArgumentError
     rescue ArgumentError => e
       raise unless e.message =~ /invalid %-encoding/
+
+      @logger.info "Bad request. Returning 400 due to #{e.message} from request with env #{request.inspect}"
       error_response
     end
-
 
     private
 
     def error_response
-      @logger.info "Bad request. Returning 400 due to #{e.message}" + \
-                  " from request with env #{request.inspect}"
-
       headers = { 'Content-Type' => "text/plain; charset=utf-8" }
       text = "Bad Request"
       [400, headers, [text]]
