@@ -2,6 +2,7 @@ require "rack/utf8_sanitizer"
 
 module HandleInvalidPercentEncodingRequests
 
+  # Rails Engine that inserts the Middleware at the top of the Rack queue
   class Engine < Rails::Engine
     initializer "handle_invalid_percent_encoding_requests.add_middleware" do |app|
       # Via http://stackoverflow.com/a/24727310/311657

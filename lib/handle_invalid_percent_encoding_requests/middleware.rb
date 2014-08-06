@@ -1,13 +1,15 @@
 # Via https://gist.github.com/bf4/d26259acfa29f3b9882b#file-exception_app-rb
-
 module HandleInvalidPercentEncodingRequests
 
+  # Rack Middleware inserted before the request that detects an encoding error
+  # and returns an appropriate response.
   class Middleware
-    def initialize(app, stdout=STDOUT)
+    def initialize(app, stdout = STDOUT)
       @app = app
       @logger = defined?(Rails.logger) ? Rails.logger : Logger.new(stdout)
     end
 
+    # Called by Rack when a request comes through
     def call(env)
       # calling env.dup here prevents bad things from happening
       request = Rack::Request.new(env.dup)
@@ -21,15 +23,17 @@ module HandleInvalidPercentEncodingRequests
     rescue ArgumentError => e
       raise unless e.message =~ /invalid %-encoding/
 
-      @logger.info "Bad request. Returning 400 due to #{e.message} from request with env #{request.inspect}"
+      @logger.info "Bad request. Returning 400 due to #{e.message} from " + \
+                   "request with env #{request.inspect}"
       error_response
     end
+
 
     private
 
     def error_response
-      headers = { 'Content-Type' => "text/plain; charset=utf-8" }
-      text = "Bad Request"
+      headers = { 'Content-Type' => 'text/plain; charset=utf-8' }
+      text = 'Bad Request'
       [400, headers, [text]]
     end
   end
