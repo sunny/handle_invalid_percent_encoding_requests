@@ -2,7 +2,9 @@ Handle Invalid Percent Encoding Requests
 =======================================
 
 Rails Engine that renders 400 error whenever a request's
-percent-encoding is malformed.
+percent-encoding is malformed and raises the following error:
+
+    invalid byte sequence in UTF-8
 
 This happens notably a lot for the chinese [EasouSpider](http://www.easou.com/search/spider.html).
 
