@@ -21,8 +21,7 @@ gem "handle_invalid_percent_encoding_requests"
 
 Then type `bundle`.
 
-Rails 4.2
+Rack and Rails 4.2
 ---------
 
-This will probably be fixed in Rails 4.2 by the following commit:
-https://github.com/rails/rails/commit/3fc561a1f71edf1c2bae695cafa03909d24a5ca3
+This might be fixed in Rack https://github.com/rack/rack/pull/713 and Rails 4.2 https://github.com/rails/rails/commit/3fc561a1f71edf1c2bae695cafa03909d24a5ca3 but it needs testing.
