@@ -42,7 +42,7 @@ module HandleInvalidPercentEncodingRequests
 
     rescue InvalidPercentEncodingErrorMatcher,
            InvalidByteSequenceErrorMatcher,
-           NullByteErrorMatcher
+           NullByteErrorMatcher => e
 
       @logger.info "Bad request. Returning 400 due to #{e.class.name} " \
                    "#{e.message.inspect} from request with env " \
