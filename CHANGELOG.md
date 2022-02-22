@@ -1,6 +1,13 @@
 Changelog
 =========
 
+v1.1.1
+------
+
+Fix:
+
+- Fix raised exception (#3 Thanks @kyrofa)
+
 v1.1.0
 ------
 
