@@ -18,5 +18,6 @@ Gem::Specification.new do |s|
   s.add_dependency "rails", ">= 3.1"
   s.add_dependency "rack-utf8_sanitizer"
 
+  s.add_development_dependency "minitest"
   s.add_development_dependency "rake"
 end
